@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- css plugins -->
+    <link rel="stylesheet" type="text/css" href="themes/theme-admin/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="themes/theme-admin/css/jquery/jquery-ui.min.js">
     <link rel="stylesheet" type="text/css" id="theme" href="themes/theme-admin/css/theme-default.css"/>
 
-
+    <!-- js plugins -->
     <script type="text/javascript" src="themes/theme-admin/js/plugins/jquery/jquery.min.js"></script> 
     <script type="text/javascript" src="themes/theme-admin/js/plugins/jquery/jquery-ui.min.js"></script> 
     <script type="text/javascript" src="themes/theme-admin/js/plugins/bootstrap/bootstrap.min.js"></script>
