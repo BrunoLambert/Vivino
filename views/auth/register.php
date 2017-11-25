@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" class="body-full-height">
-    <head>        
-        <!-- META SECTION -->
-        <title>Cadastrar</title>            
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <!-- END META SECTION -->
-        
-        <!-- CSS INCLUDE -->        
-       <link rel="stylesheet" type="text/css" id="theme" href="themes/theme-admin/css/theme-default.css"/>
-        <!-- EOF CSS INCLUDE -->                                    
-    </head>
-    <body>
-        <a href="controller/pageController.php?change=index">Voltar</a>
-        <div class="login-container">
-        
-            <div class="login-box animated fadeInDown">
-                <div class="login-body">
-                    <div class="login-title"><strong>Faça seu cadastro</strong></div>
-                    <form action="index.php?action=register" class="form-horizontal" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    
+<head>        
+    <!-- META SECTION -->
+    <title>Cadastrar</title>            
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+
+    <!-- CSS INCLUDE -->        
+    <link rel="stylesheet" type="text/css" id="theme" href="themes/theme-admin/css/theme-default.css"/>
+    <!-- EOF CSS INCLUDE -->                                    
+</head>
+<body>
+    <a href="controller/pageController.php?change=index">Voltar</a>
+    <div class="login-container">
+
+        <div class="login-box animated fadeInDown">
+            <div class="login-body">
+                <div class="login-title"><strong>Faça seu cadastro</strong></div>
+                <?php
+                if (!isset($_SESSION)) session_start();
+
+                if(isset($_SESSION['error'])){
+                    ?>
+                    <div class="col-md-6">
+                        <a href="#" class="btn btn-link btn-block">
+                            Erro no Cadastro: 
+                            <?=$_SESSION['error']?><br>
+                        </a>
+                    </div>
+                    <?php
+                    unset($_SESSION['error']);
+                }
+                ?>
+                <form action="index.php?action=register" class="form-horizontal" method="POST">
+
                     <div class="form-group">
                         <div class="col-md-12">
                             <input type="text" class="form-control" name="firstName"" placeholder="Primeiro Nome"/>
@@ -62,15 +76,15 @@
                         </div>
                         
                     </div>
-                    </form>
-                </div>
-                <div class="login-footer">
-                </div>
+                </form>
             </div>
-            
+            <div class="login-footer">
+            </div>
         </div>
-        
-    </body>
+
+    </div>
+
+</body>
 </html>
 
 

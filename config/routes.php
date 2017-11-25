@@ -13,7 +13,7 @@
 
 	# Requisições de POST
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		
+
 		switch ($_GET['action']) {
 			case 'register':
 				$_SESSION['controller'] = 'register';
@@ -25,7 +25,7 @@
 				break;
 			
 			default:
-				# code...
+				require_once(VIEWS . "index/index.php");
 				break;
 		}
 	}
@@ -37,11 +37,12 @@
 			case 'login':
 				require_once(VIEWS . "/auth/login.php");
 				break;
+			case 'logout':
+				$_SESSION['controller'] = 'logout';
+				require_once(CONTROL. "usuarioController.php");
+				break;
 			case 'register':
 				require_once(VIEWS . "/auth/register.php");
-				break;
-			case 'registered':
-				require_once(VIEWS . "/auth/registerResult.php");
 				break;
 			case 'addWine':
 				require_once(VIEWS . "/admin/addwine.php");
