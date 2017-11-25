@@ -4,7 +4,7 @@
     </div>
     </br></br>
     <div class="col-sm-12">
-        <form method="POST" action="{{strpos(Request::url(), 'editar') ? route('atualizar_wine', $wine->id) : route('salvar_wine')}}">
+        <form method="POST" action="index.php?action=createWine">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="form-group">
@@ -41,10 +41,9 @@
                 <input type="submit" value="Cadastrar" class="btn btn-default">
             </div>
 
-
-
         </form>
 
     </div>
     </div>
+
   <?php include('footer.php'); ?>

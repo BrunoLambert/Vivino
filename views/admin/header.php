@@ -8,27 +8,27 @@
 
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" id="theme" href="../../theme-admin/css/theme-default.css"/>
+    <link rel="stylesheet" type="text/css" id="theme" href="themes/theme-admin/css/theme-default.css"/>
 
 
-    <script type="text/javascript" src="../../theme-admin/js/plugins/jquery/jquery.min.js"></script> 
-    <script type="text/javascript" src="../../theme-admin/js/plugins/jquery/jquery-ui.min.js"></script> 
-    <script type="text/javascript" src="../../theme-admin/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/plugins/jquery/jquery.min.js"></script> 
+    <script type="text/javascript" src="themes/theme-admin/js/plugins/jquery/jquery-ui.min.js"></script> 
+    <script type="text/javascript" src="themes/theme-admin/js/plugins/bootstrap/bootstrap.min.js"></script>
     
     <!-- START THIS PAGE PLUGINS-->  
-    <script type="text/javascript" src="../../theme-admin/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
 
-    <script type="text/javascript" src="../../theme-admin/js/plugins/morris/raphael-min.js"></script>
-    <script type="text/javascript" src="../../theme-admin/js/plugins/morris/morris.min.js"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/plugins/morris/raphael-min.js"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/plugins/morris/morris.min.js"></script>
 
-    <script type="text/javascript" src="../../theme-admin/js/plugins/icheck/icheck.min.js"></script>
-    <script type="text/javascript" src="../../theme-admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/plugins/icheck/icheck.min.js"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'"></script>
 
 
     <!-- START TEMPLATE -->
-    <script type="text/javascript" src="../../theme-admin/js/settings.js"></script>
-    <script type="text/javascript" src="../../theme-admin/js/plugins.js"></script>
-    <script type="text/javascript" src="../../theme-admin/js/actions.js"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/settings.js"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/plugins.js"></script>
+    <script type="text/javascript" src="themes/theme-admin/js/actions.js"></script>
 
     
 </head>

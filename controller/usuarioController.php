@@ -19,5 +19,25 @@
 
 		mysqli_close($db);
 		header("Location: ../../Vivino");
+
+	}else if ($_SESSION['controller'] == 'login'){
+
+		include("config/database.php");
+		$sql = "select * from users where email = '" . $_POST['email'] . "' and pword = '" . $_POST['password'] . "')";
+		$result = mysqli_query($db, $sql);
+
+		if($result){
+			$row = $result->fetch_array();
+
+			$_SESSION['user_Id'] = $row['id'];
+			$_SESSION['user_firstName'] = $row['firstName'];
+			$_SESSION['user_lastName'] = $row['lastName'];
+			$_SESSION['user_email'] = $row['email'];
+			$_SESSION['user_login'] = $row['login'];
+			
+		}else{
+
+		}
+
 	}
 ?>
