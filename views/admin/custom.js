@@ -8,7 +8,7 @@ $(function() {
 	    minLength: 2,
 	    source: function( request, response ) {
 	        $.ajax({
-	            url: "consulta.php",
+	            url: "views/admin/consulta.php",
 	            dataType: "json",
 	            data: {
 	            	acao: 'autocomplete',

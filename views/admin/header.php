@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- css plugins -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
     <link rel="stylesheet" type="text/css" href="themes/theme-admin/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="themes/theme-admin/css/jquery/jquery-ui.min.js">
     <link rel="stylesheet" type="text/css" id="theme" href="themes/theme-admin/css/theme-default.css"/>
 
     <!-- js plugins -->
-    <script type="text/javascript" src="themes/theme-admin/js/plugins/jquery/jquery.min.js"></script> 
-    <script type="text/javascript" src="themes/theme-admin/js/plugins/jquery/jquery-ui.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
     <script type="text/javascript" src="themes/theme-admin/js/plugins/bootstrap/bootstrap.min.js"></script>
     
     <!-- START THIS PAGE PLUGINS-->  
