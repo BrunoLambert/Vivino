@@ -18,6 +18,9 @@
 				$_SESSION['controller'] = 'register';
 				require_once(CONTROL . "usuarioController.php");
 				break;
+			case 'login':
+				$_SESSION['controller'] = 'login';
+				break;
 			
 			default:
 				# code...
