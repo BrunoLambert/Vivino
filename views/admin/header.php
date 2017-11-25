@@ -42,7 +42,7 @@
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="xn-logo">
-                        <a href="{{route('index')}}">Carteira</a>
+                        <a href="#">Carteira</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                     <li class="xn-profile">
@@ -51,24 +51,24 @@
                         </a>
                         <div class="profile">
                             <div class="profile-image">
-                                <img src="{{ Auth::user()->photo != NULL ? route('images', [Auth::user()->photo, 170]) : '../theme/assets/images/users/userdefault.png'}}" alt="John Doe"/>
+                                <img src="#" alt="John Doe"/>
                             </div>
                             <div class="profile-data">
-                                <div class="profile-data-name">{{Auth::user()->name}}</div><!-- criar cadastro de usuario-->
+                                <div class="profile-data-name">UserName</div><!-- criar cadastro de usuario-->
                                 <div class="profile-data-title"></div>
                             </div>
                             <div class="profile-controls">
-                                <a href="{{route('editar_usuario')}}" class="profile-control-left"><span class="fa fa-info"></span></a>
-                                <a href="#!" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                                <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                <a href="#" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                             </div>
                         </div>                                                                        
                     </li>
                     <li class="xn-title">Navegação</li>
                     <li>
-                        <a href="{{ route('index') }}"><span class="fa fa fa-desktop"></span> <span class="xn-text">Inicio</span></a>
+                        <a href="#"><span class="fa fa fa-desktop"></span> <span class="xn-text">Inicio</span></a>
                     </li> 
                     <li>
-                        <a href="{{ route('index_wine') }}"><span class="fa fa-drink"></span> <span class="xn-text">My Wines</span></a>
+                        <a href="#"><span class="fa fa-drink"></span> <span class="xn-text">My Wines</span></a>
                     </li>
                     
                 </ul>
@@ -88,13 +88,13 @@
                     <!-- END SEARCH -->
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
-                        <a href="{{ url('logout') }}"><span class="fa fa-sign-out"></span></a>                        
+                        <a href="#"><span class="fa fa-sign-out"></span></a>                        
                     </li> 
                     <!-- END SIGN OUT -->
                     <!-- SALDO -->
                     <li class="pull-right">
-                        <a href="{{route('index')}}">
-                            <strong style="{!!(Session::get('user.name'))!!}"></strong>
+                        <a href="#">
+                            <strong style=""></strong>
                             
                             <strong><strong>
                         </a>         
