@@ -6,7 +6,7 @@ if ($_SESSION['controller'] == 'register') {
 	include("config/database.php");
 
 	$sql = "insert into users values (NULL, '" . $_POST['firstName'] . "', '" . $_POST['lastName'] . "', '" . $_POST['login'] . "', '" . $_POST['email'] . "', '" . $_POST['password'] . "')";
-	echo $sql;
+	
 
 	$result = mysqli_query($db, $sql);
 
