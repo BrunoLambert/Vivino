@@ -4,9 +4,14 @@
 <head>
     <title>Vivino Clone</title>
     <link href="themes/theme-public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="views/index/style.css">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="themes/theme-public/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="themes/theme-public/js/bootstrap.js"></script>
+    <!-- JRange -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="themes/theme-public/jrange/jquery.range.css">
+    <script src="themes/theme-public/jrange/jquery.range.js"></script>
     <!-- Custom Theme files -->
     <link href="themes/theme-public/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link rel="stylesheet" href="themes/theme-public/css/flexslider.css" type="text/css" media="screen" />

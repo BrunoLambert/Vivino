@@ -4,7 +4,7 @@
 	}
 
 	# SERVER, USER, PASSWORD, DATA_BASE
-	$db = new mysqli('localhost', 'root', '', 'xvivino');
+	$db = new mysqli('localhost', 'root', 'root', 'xvivino');
 
 	if(!$db){
 		?>

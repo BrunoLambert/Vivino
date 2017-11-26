@@ -1,0 +1,12 @@
+.btn-price{
+	background-color: #78444B;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #78444B;
+    width: 20%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+}
