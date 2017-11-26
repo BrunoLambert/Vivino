@@ -2,7 +2,7 @@
 $('.price_range').jRange({
     from: 0,
     to: 1500,
-    step: 100,
+    step: 10,
     format: 'R$ %s',
     showLabels: true,
     isRange : true,
