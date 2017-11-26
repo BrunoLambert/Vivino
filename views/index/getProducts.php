@@ -19,10 +19,12 @@ if(isset($_POST['price_range'])){
     if($query->num_rows > 0){
         while($row = $query->fetch_assoc()){
     ?>
-            <div class="list-item">
-                <h2><?php echo $row["name"]; ?></h2>
-                <h4>Price: <?php echo $row["price"]; ?></h4>
-            </div>
+                <div class="list-item">
+
+                    <h2 style="float:right;"><?php echo $row["name"]; ?></h2>
+                    <h4 style="float:right;"">Price: <?php echo $row["price"]; ?></h4>
+
+                </div>
     <?php }
     }else{
         echo 'Product(s) not found';
