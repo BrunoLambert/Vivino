@@ -24,11 +24,10 @@
 				require_once(CONTROL . "usuarioController.php");
 				break;
 			case 'createWine':
-
-				if ($_POST['hidden'] == 'insert') $_SESSION['controller'] = 'insertWine';
-				else if ($_POST['hidden'] == 'update') $_SESSION['controller'] == 'updateWine';
-				echo $_POST['hidden'];
-				//require_once(CONTROL . "wineController.php");
+				if ($_POST['hidden'] == "insert") $_SESSION['controller'] = 'insertWine';
+				else if ($_POST['hidden'] == "update") $_SESSION['controller'] = 'updateWine';
+				
+				require_once(CONTROL . "wineController.php");
 				break;
 			default:
 				require_once(VIEWS . "index/index.php");
