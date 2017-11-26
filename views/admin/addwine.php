@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
     <div class="form-group">
-        <h1><center> Vinhos </center></h1>
+        <h1><center> Adicionar Vinho </center></h1>
     </div>
     </br></br>
     <div class="col-sm-12">
@@ -8,14 +8,17 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 
-
+                <input type="hidden" name="hidden" id="hidden">
+                <input type="hidden" name="id" id="id">
+            
                 <div class="form-group">
-                    <label for="nome">Nome do Vinho</label>
+                    <label for="nome">Nome</label>
                     <input type="text" class="form-control" name="name" id="nome_vinho">
                 </div>
-                <header class="row">
-                    <h2 class='text-center text-danger'>Vinhos</h2>
-                </header>
+                <div class="form-group">
+                    <label for="nome">Preço</label>
+                    <input type="text" class="form-control" name="preco" id="preco_vinho">
+                </div>
                 <div class="form-group">
                     <label for="nome">Produtor</label>
                     <input type="text" class="form-control" name="producer" id="produtor_vinho" required>

@@ -5,7 +5,7 @@ $(function() {
 
     // Dispara o Autocomplete a partir do segundo caracter
     $( "#nome_vinho" ).autocomplete({
-	    minLength: 2,
+	    minLength: 3,
 	    source: function( request, response ) {
 	        $.ajax({
 	            url: "views/admin/consulta.php",
@@ -31,7 +31,7 @@ $(function() {
     })
     .autocomplete( "instance" )._renderItem = function( ul, item ) {
       return $( "<li>" )
-        .append( "<a><b>Produtor: </b>" + item.producer + "<br><b>Preço: </b>" + item.price 
+        .append( "<a><b>Nome do vinho: </b>" + item.name + "Produtor: </b>" + item.producer + "<br><b>Preço: </b>" + item.price 
         	+ " - <b> País: </b>" + item.country + "</a><br>" )
         .appendTo( ul );
     };
@@ -40,9 +40,9 @@ $(function() {
     function carregarDados(){
     	var busca = $('#nome_vinho').val();
 
-    	if(busca != "" && busca.length >= 2){
+    	if(busca != "" && busca.length >= 3){
     		$.ajax({
-	            url: "consulta.php",
+	            url: "views/admin/consulta.php",
 	            dataType: "json",	
 	            data: {
 	            	acao: 'consulta',
@@ -50,8 +50,13 @@ $(function() {
 	            },
 	            success: function( data ) {
 	               $('#nome_vinho').val(data[0].name);
+	               $('#preco_vinho').val(data[0].price);
 	               $('#produtor_vinho').val(data[0].producer);
 	               $('#pais_vinho').val(data[0].country);
+	               $('#tipo_vinho').val(data[0].type);
+	               $('#harm_vinho').val(data[0].harmonization);
+	               $('#hidden').val('update');
+	               $('#id').val('id');
 	            }
 	        });
     	}
@@ -63,8 +68,12 @@ $(function() {
 
        if(nome_vinho == ""){
            $('#nome_vinho').val('');
+           $('#preco_vinho').val('');
            $('#produtor_vinho').val('');
            $('#pais_vinho').val('');
+           $('#tipo_vinho').val('');
+	       $('#harm_vinho').val('');
+           $('#hidden').val('insert');
        }
     }
 });

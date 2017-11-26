@@ -16,7 +16,7 @@ $conexao = new PDO("mysql:host=".SERVER."; dbname=".DBNAME, USER, PASSWORD, $opc
 // Verifica se foi solicitado uma consulta para o autocomplete
 if($acao == 'autocomplete'):
 	$where = (!empty($parametro)) ? 'WHERE name LIKE ?' : '';
-	$sql = "SELECT name, producer, price, country FROM wines " . $where;
+	$sql = "SELECT name, producer, price, country, type, harmonization FROM wines " . $where;
 
 	$stm = $conexao->prepare($sql);
 	$stm->bindValue(1, '%'.$parametro.'%');
@@ -29,7 +29,7 @@ endif;
 
 // Verifica se foi solicitado uma consulta para preencher os campos do formulário
 if($acao == 'consulta'):
-	$sql = "SELECT name, producer, price, country FROM wines ";
+	$sql = "SELECT name, producer, price, country, type, harmonization FROM wines ";
 	$sql .= "WHERE name LIKE ? LIMIT 1";
 
 	$stm = $conexao->prepare($sql);
