@@ -4,10 +4,8 @@
 <head>
     <title>Vivino Clone</title>
     <link href="themes/theme-public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-    <link href="themes/theme-public/css/price-range.css" rel="stylesheet" type="text/css" media="all">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="themes/theme-publicpublic/js/jquery-1.11.0.min.js"></script>
-    <link href="themes/theme-public/css/login.css" rel="stylesheet" type="text/css" media="all">
+    <script src="themes/theme-public/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="themes/theme-public/js/bootstrap.js"></script>
     <!-- Custom Theme files -->
     <link href="themes/theme-public/css/style.css" rel="stylesheet" type="text/css" media="all"/>
