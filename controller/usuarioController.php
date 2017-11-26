@@ -5,7 +5,7 @@ if ($_SESSION['controller'] == 'register') {
 
 	include("config/database.php");
 
-	$sql = "insert into users values (NULL, '" . $_POST['firstName'] . "', '" . $_POST['lastName'] . "', '" . $_POST['login'] . "', '" . $_POST['email'] . "', '" . $_POST['password'] . "')";
+	$sql = "insert into users values (NULL, '" . $_POST['firstName'] . "', '" . $_POST['lastName'] . "', '" . $_POST['login'] . "', '" . $_POST['email'] . "', '" . $_POST['password'] . "', 'photos/user0.jpg')";
 	
 
 	$result = mysqli_query($db, $sql);
@@ -21,6 +21,7 @@ if ($_SESSION['controller'] == 'register') {
 		$_SESSION['user_lastName'] = $row['lastName'];
 		$_SESSION['user_email'] = $row['email'];
 		$_SESSION['user_login'] = $row['login'];
+		$_SESSION['user_photo'] = $row['photo'];
 
 		mysqli_close($db);
 		unset($_SESSION['error']);
@@ -49,6 +50,7 @@ if ($_SESSION['controller'] == 'register') {
 			$_SESSION['user_lastName'] = $row['lastName'];
 			$_SESSION['user_email'] = $row['email'];
 			$_SESSION['user_login'] = $row['login'];
+			$_SESSION['user_photo'] = $row['photo'];
 
 			unset($_SESSION['error']);
 			mysqli_close($db);

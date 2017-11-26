@@ -86,6 +86,20 @@ if ($_SESSION['controller'] == 'insertWine') {
 
 	}else{
 
+		$sql = "select id_user from wines where id = '" . $_POST['id'] . "'";
+		$result = mysqli_query($db, $sql);
+		$row = $result->fetch_array();
+
+		if ($_SESSION['user_id'] != $row['id_user']){
+			
+			$sql = 	"insert into colaboracao values ('" . 
+			$_SESSION['user_id'] . "', '" . 
+			$_POST['id'] . "')";
+			$result = mysqli_query($db, $sql);
+
+			unset($_SESSION['error']);
+		}
+
 		if (isset($_FILES["photo"])){
 
 			$temp = $_FILES["photo"]["tmp_name"];
@@ -119,7 +133,7 @@ if ($_SESSION['controller'] == 'insertWine') {
 
 }else if ($_SESSION['controller'] ==  'deleteWine') {
 	include('config/database.php');
-	
+
 }
 
 ?>

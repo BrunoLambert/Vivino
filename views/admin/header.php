@@ -44,7 +44,7 @@
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="xn-logo">
-                        <a href="#">Carteira</a>
+                        <a href="#">Perfil</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                     <li class="xn-profile">
@@ -53,24 +53,23 @@
                         </a>
                         <div class="profile">
                             <div class="profile-image">
-                                <img src="#" alt="John Doe"/>
+                                <img src=<?=$_SESSION['user_photo']?> alt="John Doe"/>
                             </div>
                             <div class="profile-data">
-                                <div class="profile-data-name">UserName</div><!-- criar cadastro de usuario-->
+                                <div class="profile-data-name"><?=$_SESSION['user_firstName']?> <?=$_SESSION['user_lastName']?></div><!-- criar cadastro de usuario-->
                                 <div class="profile-data-title"></div>
                             </div>
                             <div class="profile-controls">
-                                <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
-                                <a href="#" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                                <a href="#" class="profile-control-left"><span class="fa fa-cogs"></span></a>
                             </div>
                         </div>                                                                        
                     </li>
                     <li class="xn-title">Navegação</li>
                     <li>
-                        <a href="#"><span class="fa fa fa-desktop"></span> <span class="xn-text">Inicio</span></a>
+                        <a href="controller/pageController.php?change=index"><span class="fa fa fa-desktop"></span> <span class="xn-text">Inicio</span></a>
                     </li> 
                     <li>
-                        <a href="#"><span class="fa fa-drink"></span> <span class="xn-text">My Wines</span></a>
+                        <a href="controller/pageController.php?change=myWines"><span class="fa fa-drink"></span> <span class="xn-text">My Wines</span></a>
                     </li>
                     
                 </ul>
