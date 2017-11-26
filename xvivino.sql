@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2017 at 09:01 PM
+-- Generation Time: Nov 26, 2017 at 04:37 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -48,21 +48,8 @@ CREATE TABLE `colaboracao` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `estilos`
+-- Table structure for table `users`
 --
-
-CREATE TABLE `estilos` (
-  `idWine` int(10) UNSIGNED NOT NULL,
-  `style` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
-
--- --------------------------------------------------------
-
-
--- --------------------------------------------------------
-
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -70,19 +57,16 @@ CREATE TABLE `users` (
   `lastName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `login` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `pword` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `uvas`
+-- Dumping data for table `users`
 --
 
-CREATE TABLE `uvas` (
-  `idWine` int(10) UNSIGNED NOT NULL,
-  `grape` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `users` (`id`, `firstName`, `lastName`, `login`, `email`, `pword`, `photo`) VALUES
+(1, 'Bruno', 'Lambert', 'bruno', 'brunofsclambert@gmail.com', '1234', '');
 
 -- --------------------------------------------------------
 
@@ -92,13 +76,16 @@ CREATE TABLE `uvas` (
 
 CREATE TABLE `wines` (
   `id` int(10) UNSIGNED NOT NULL,
-  `id_user` int(10) COLLATE utf8_unicode_ci NOT NULL,
+  `id_user` int(10) NOT NULL,
   `producer` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `price` double(8,2) NOT NULL,
   `country` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type` enum('Tinto','Branco','Rose','Espumante','Sobremesa','Porto') COLLATE utf8_unicode_ci NOT NULL,
-  `harmonization` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `harmonization` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `grape` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `style` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -121,24 +108,12 @@ ALTER TABLE `colaboracao`
   ADD KEY `colaboracao_idwine_foreign` (`idWine`);
 
 --
--- Indexes for table `estilos`
---
-ALTER TABLE `estilos`
-  ADD PRIMARY KEY (`idWine`,`style`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_login_unique` (`login`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- Indexes for table `uvas`
---
-ALTER TABLE `uvas`
-  ADD PRIMARY KEY (`idWine`,`grape`);
 
 --
 -- Indexes for table `wines`
@@ -160,12 +135,12 @@ ALTER TABLE `avaliacoes`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `wines`
 --
 ALTER TABLE `wines`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
@@ -183,12 +158,6 @@ ALTER TABLE `avaliacoes`
 ALTER TABLE `colaboracao`
   ADD CONSTRAINT `colaboracao_iduser_foreign` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `colaboracao_idwine_foreign` FOREIGN KEY (`idWine`) REFERENCES `wines` (`id`);
-
---
--- Constraints for table `wines`
---
-ALTER TABLE `wines`
-  ADD CONSTRAINT `wines_id_user_foreign` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

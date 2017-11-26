@@ -24,10 +24,12 @@ if ($_SESSION['controller'] == 'register') {
 
 		mysqli_close($db);
 		unset($_SESSION['error']);
+		unset($_SESSION['controller']);
 		header("Location: controller/pageController.php?change=index");
 
 	}else{
 		$_SESSION['error'] = $db->error;
+		unset($_SESSION['controller']);
 		mysqli_close($db);
 		header("Location: controller/pageController.php?change=register");
 	}
@@ -50,18 +52,21 @@ if ($_SESSION['controller'] == 'register') {
 
 			unset($_SESSION['error']);
 			mysqli_close($db);
+			unset($_SESSION['controller']);
 			header("Location: controller/pageController.php?change=index");
 
 		}else{
 
 			$_SESSION['error'] = "Login Invalido!";
 			mysqli_close($db);
+			unset($_SESSION['controller']);
 			header("Location: controller/pageController.php?change=login");
 		}
 
 	}else{
 		$_SESSION['error'] = $db->error;
 		mysqli_close($db);
+		unset($_SESSION['controller']);
 		header("Location: controller/pageController.php?change=login");
 	}
 
@@ -74,6 +79,8 @@ if ($_SESSION['controller'] == 'register') {
 	unset($_SESSION['user_email']);
 	unset($_SESSION['user_login']);
 
+	unset($_SESSION['controller']);
+	
 	header("Location: controller/pageController.php?change=index");
 }
 ?>
