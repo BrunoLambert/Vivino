@@ -15,7 +15,7 @@ if ($_SESSION['controller'] == 'insertWine') {
 	$_POST['harmonization'] . "','" .
 	$_POST['grape'] . "','" .
 	$_POST['style'] . "'," .
-	"'whine0.jpg'" . ## Default
+	"'photos/wine0.jpg'" . ## Default
 	")";
 
 	$result = mysqli_query($db, $sql);
@@ -31,14 +31,14 @@ if ($_SESSION['controller'] == 'insertWine') {
 
 		$wineID = $db->insert_id;
 
-		if (isset($_FILES["photo"])){
+		if (isset($_FILES["photo"]) && $_FILES["photo"]["name"] != ""){
 
 			$temp = $_FILES["photo"]["tmp_name"];
 			$arqName = "wine" . $wineID . ".jpg";
 
 			if(move_uploaded_file($temp, "photos/$arqName")){
 
-				$sql = "update wines set photo = '" . $arqName . "' where id = '" . $wineID . "'";
+				$sql = "update wines set photo = 'photos/" . $arqName . "' where id = '" . $wineID . "'";
 				$result = mysqli_query($db, $sql);
 
 				if(!$result){
@@ -100,14 +100,14 @@ if ($_SESSION['controller'] == 'insertWine') {
 			unset($_SESSION['error']);
 		}
 
-		if (isset($_FILES["photo"])){
+		if (isset($_FILES["photo"]) && $_FILES["photo"]["name"] != ""){
 
 			$temp = $_FILES["photo"]["tmp_name"];
 			$arqName = "wine" . $_POST['id'] . ".jpg";
 
 			if(move_uploaded_file($temp, "photos/$arqName")){
 
-				$sql = "update wines set photo = '" . $arqName . "' where id = '" . $_POST['id'] . "'";
+				$sql = "update wines set photo = 'photos/" . $arqName . "' where id = '" . $_POST['id'] . "'";
 				$result = mysqli_query($db, $sql);
 
 				if(!$result){

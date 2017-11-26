@@ -7,5 +7,9 @@ if(isset($_GET['change'])){
 	$_SESSION['action'] = $_GET['change'];
 }
 
+if (isset($_GET['wineId']) && $_GET['wineId'] != ""){
+	$_SESSION['wineId'] = $_GET['wineId'];
+}
+
 header("Location: ../../" . ROOT);
 ?>

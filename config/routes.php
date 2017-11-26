@@ -23,6 +23,10 @@
 				$_SESSION['controller'] = 'login';
 				require_once(CONTROL . "usuarioController.php");
 				break;
+			case 'updateUser':
+				$_SESSION['controller'] = 'update';
+				require_once(CONTROL . "usuarioController.php");
+				break;
 			case 'createWine':
 				if ($_POST['hidden'] == "insert") $_SESSION['controller'] = 'insertWine';
 				else if ($_POST['hidden'] == "update") $_SESSION['controller'] = 'updateWine';
@@ -49,11 +53,17 @@
 			case 'register':
 				require_once(VIEWS . "/auth/register.php");
 				break;
+			case 'updateUser':
+				require_once(VIEWS . "/admin/user.php");
+				break;
 			case 'addWine':
 				require_once(VIEWS . "/admin/addwine.php");
 				break;
 			case 'myWines':
 				require_once(VIEWS . "/admin/mywines.php");
+				break;
+			case 'wine':
+				require_once(VIEWS . "/admin/wine.php");
 				break;
 			default:
 				require_once(VIEWS . "index/index.php");

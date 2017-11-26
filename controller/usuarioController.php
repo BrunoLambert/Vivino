@@ -84,5 +84,58 @@ if ($_SESSION['controller'] == 'register') {
 	unset($_SESSION['controller']);
 	
 	header("Location: controller/pageController.php?change=index");
+
+}else if($_SESSION['controller'] == 'update'){
+	include("config/database.php");
+
+	$sql = "update users set " .  
+	"firstName = '" . $_POST['firstName'] . "', " .
+	"lastName = '" . $_POST['lastName'] . "' ";
+
+	if ($_POST['password'] != "") $sql .= ", pword = '" . $_POST['password'] . "' ";
+
+	$sql .= "where id = '" . $_SESSION['user_id'] . "'";
+
+	$result = mysqli_query($db, $sql);
+
+	if(!$result){
+		$_SESSION['error'] = $db->error;
+		mysqli_close($db);
+		header("Location: controller/pageController.php?change=updateUser");
+
+	}else{
+
+		$_SESSION['user_firstName'] = $_POST['firstName'];
+		$_SESSION['user_lastName'] = $_POST['lastName'];
+
+		if (isset($_FILES["photo"]) && $_FILES["photo"]["name"] != ""){
+
+			$temp = $_FILES["photo"]["tmp_name"];
+			$arqName = "user" . $_SESSION['user_id'] . ".jpg";
+
+			if(move_uploaded_file($temp, "photos/$arqName")){
+
+				$sql = "update users set photo = 'photos/" . $arqName . "' where id = '" . $_SESSION['user_id'] . "'";
+				$result = mysqli_query($db, $sql);
+
+				if(!$result){
+
+					$_SESSION['error'] = $db->error;
+					mysqli_close($db);
+					header("Location: controller/pageController.php?change=updateUser");
+
+				}else unset($_SESSION['error']);
+
+			}else{
+
+				$_SESSION['error'] = "Falha no envio da imagem";
+				mysqli_close($db);
+				header("Location: controller/pageController.php?change=updateUser");
+			}
+		}
+	}
+	unset($_SESSION['error']);
+	$_SESSION['sucess'] = "Dados moficados com Sucesso!";
+	header("Location: controller/pageController.php?change=updateUser");
 }
 ?>

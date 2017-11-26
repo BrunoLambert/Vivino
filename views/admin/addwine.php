@@ -40,8 +40,15 @@
                 <input type="text" class="form-control" name="country" id="pais_vinho">
             </div>
             <div class="form-group">
-                <label for="nome">Tipo</label>
-                <input type="text" class="form-control" name="type" id="tipo_vinho">
+                <label for="nome">Tipo</label><br>
+                <select name="type" id="tipo_vinho" style="width: 100%; height: 30px;">
+                    <option value="Tinto">Tinto</option>
+                    <option value="Branco">Branco</option>
+                    <option value="Rose">Rose</option>
+                    <option value="Espumante">Espumante</option>
+                    <option value="Sobremesa">Sobremesa</option>
+                    <option value="Porto">Porto</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="nome">Estilo</label>
