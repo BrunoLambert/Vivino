@@ -1,4 +1,9 @@
-<?php 
+<?php
+
+if(basename($_SERVER["PHP_SELF"])=='wine.php'){
+	die("<script>window.location=('../../controller/pageController.php?change=index')</script>");
+}
+
 if(!isset($_SESSION)) session_start();
 if (isset($_SESSION['user_id'])) include('header.php');
 else include (VIEWS . "index/header.php");

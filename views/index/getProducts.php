@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['price_range'])){
 
     include('../../config/database.php');

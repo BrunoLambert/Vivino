@@ -1,5 +1,9 @@
-<?php include('header.php'); ?>
-
+<?php 
+if(basename($_SERVER["PHP_SELF"])=='user.php'){
+	die("<script>window.location=('../../controller/pageController.php?change=index')</script>");
+}
+include('header.php'); 
+?>
 
 <script type="text/javascript" src="themes/theme-admin/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="themes/theme-admin/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>

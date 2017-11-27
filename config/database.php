@@ -1,6 +1,6 @@
 <?php
 	if(basename($_SERVER["PHP_SELF"])=='database.php'){
-		die("<script>window.location=('../../Vivino')</script>");
+		die("<script>window.location=('../controller/pageController.php?change=index')</script>");
 	}
 
 	# SERVER, USER, PASSWORD, DATA_BASE

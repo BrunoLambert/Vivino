@@ -1,4 +1,8 @@
 <?php
+if(basename($_SERVER["PHP_SELF"])=='userPage.php'){
+    die("<script>window.location=('../../controller/pageController.php?change=index')</script>");
+}
+
 include(VIEWS . "index/header.php");
 include("config/database.php");
 

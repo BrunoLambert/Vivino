@@ -1,3 +1,9 @@
+<?php
+if(basename($_SERVER["PHP_SELF"])=='register.php'){
+    die("<script>window.location=('../../controller/pageController.php?change=index')</script>");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="body-full-height">
 <head>        
@@ -79,12 +85,12 @@
             </div>
             <div class="login-footer">
                 <div class="form-group" style="width: 60%; margin: auto;">
-                   <a href="controller/pageController.php?change=index"><button class="btn-wine" style="height: 50px;">Voltar</button></a>
-               </div>
-            </div>
-        </div>
+                 <a href="controller/pageController.php?change=index"><button class="btn-wine" style="height: 50px;">Voltar</button></a>
+             </div>
+         </div>
+     </div>
 
-    </div>
+ </div>
 
 </body>
 </html>

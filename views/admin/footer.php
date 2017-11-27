@@ -1,3 +1,9 @@
+<?php
+if(basename($_SERVER["PHP_SELF"])=='footer.php'){
+    die("<script>window.location=('../../controller/pageController.php?change=index')</script>");
+}
+?>
+
      </div>
                                     </div>                                    
                                 </div>

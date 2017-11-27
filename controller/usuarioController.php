@@ -1,4 +1,8 @@
 <?php
+if(basename($_SERVER["PHP_SELF"])=='usuarioController.php'){
+	die("<script>window.location=('pageController.php?change=index')</script>");
+}
+
 if(!isset($_SESSION)) session_start();
 
 if ($_SESSION['controller'] == 'register') {

@@ -1,4 +1,9 @@
-<?php include('header.php'); ?>
+<?php
+if(basename($_SERVER["PHP_SELF"])=='addwine.php'){
+    die("<script>window.location=('../../controller/pageController.php?change=index')</script>");
+}
+include('header.php'); 
+?>
 <div class="form-group">
     <h1><center> Adicionar Vinho </center></h1>
 </div>

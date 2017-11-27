@@ -1,6 +1,8 @@
 <?php
+if(basename($_SERVER["PHP_SELF"])=='header.php'){
+    die("<script>window.location=('../../controller/pageController.php?change=index')</script>");
+}
 if(!isset($_SESSION)) session_start();
-
 ?>
 <!DOCTYPE HTML>
 <html>
