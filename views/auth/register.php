@@ -15,7 +15,6 @@
     <!-- EOF CSS INCLUDE -->                                    
 </head>
 <body>
-    <a href="controller/pageController.php?change=index">Voltar</a>
     <div class="login-container">
 
         <div class="login-box animated fadeInDown">
@@ -79,6 +78,9 @@
                 </form>
             </div>
             <div class="login-footer">
+                <div class="form-group" style="width: 60%; margin: auto;">
+                   <a href="controller/pageController.php?change=index"><button class="btn-wine" style="height: 50px;">Voltar</button></a>
+               </div>
             </div>
         </div>
 

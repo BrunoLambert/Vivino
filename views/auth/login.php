@@ -16,23 +16,22 @@
 </head>
 <body>
 
-    <a href="controller/pageController.php?change=index">Voltar</a>
     <div class="login-container">
 
         <div class="login-box animated fadeInDown">
             <div class="login-body">
                 <form action="index.php?action=login" class="form-horizontal" method="POST">
                     <div class="login-title"><strong>Login</strong></div>
-                <?php
-                if (!isset($_SESSION)) session_start();
+                    <?php
+                    if (!isset($_SESSION)) session_start();
 
-                if (isset($_SESSION['error'])){
-                    ?>
-                    <div class="form-group">
-                        <div class="form-group col-md-7">
-                            <a href="" class="btn btn-link btn-block"><?=$_SESSION['error']?></a>
+                    if (isset($_SESSION['error'])){
+                        ?>
+                        <div class="form-group">
+                            <div class="form-group col-md-7">
+                                <a href="" class="btn btn-link btn-block"><?=$_SESSION['error']?></a>
+                            </div>
                         </div>
-                    </div>
                         <?php
                         unset($_SESSION['error']);
                     }
@@ -62,11 +61,13 @@
                 </form>
             </div>
             <div class="login-footer">
-            </div>
-        </div>
+                <div class="form-group" style="width: 60%; margin: auto;">
+                   <a href="controller/pageController.php?change=index"><button class="btn-wine" style="height: 50px;">Voltar</button></a>
+               </div>
+           </div>
+       </div>
 
-    </div>
-
+   </div>
 </body>
 </html>
 
