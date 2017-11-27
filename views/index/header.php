@@ -41,7 +41,7 @@
         <div class="logo wow fadeInLeft animated" data-wow-delay=".5s">
             <h1><a href="../Vivino">Vivino</a></h1>
         </div>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-fixed-top">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -53,11 +53,7 @@
             <!--/.navbar-header-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav animated wow fadeInUp animated animated" data-wow-duration="1200ms" data-wow-delay="500ms">
-                    <li>
-                        <i class="fa fa-search">
-                        </i>
-                        <input type="text" name="pesquisar" placeholder="Pesquisar">
-                    </li>
+                    
                     <?php
                     if(!isset($_SESSION)) session_start();
 
