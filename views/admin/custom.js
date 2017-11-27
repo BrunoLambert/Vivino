@@ -31,7 +31,7 @@ $(function() {
     })
     .autocomplete( "instance" )._renderItem = function( ul, item ) {
     	return $( "<li>" )
-    	.append( "<a><b>Nome do vinho: </b>" + item.name + "Produtor: </b>" + item.producer + "<br><b>Preço: </b>" + item.price 
+    	.append( "<a><b>Nome do vinho: </b>" + item.name + " - <b>Produtor: </b>" + item.producer + "<br><b>Preço: </b>" + item.price 
     		+ " - <b> País: </b>" + item.country + "</a><br>" )
     	.appendTo( ul );
     };
