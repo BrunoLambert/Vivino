@@ -10,7 +10,6 @@ $('.price_range').jRange({
 });
 function filterProducts() {
     var price_range = $('.price_range').val();
-    var op = $('.op').val();
     $.ajax({
         type: 'POST',
         url: 'views/index/getProducts.php',

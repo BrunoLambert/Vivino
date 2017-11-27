@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-include ('header.php'); 
+include ('header.php');
 include('config/database.php');
 ?>
 
@@ -46,7 +46,7 @@ include('config/database.php');
     <div class="col-md-3">
       <div class="filter-panel">
         <label class="lab-search">Avaliações</label>
-        <input type="hidden" class="price_range" value="200,800" />
+        <input type="hidden" class="price_range" value="1,5" />
       </div>
     </div>
     <div class="col-md-2">
