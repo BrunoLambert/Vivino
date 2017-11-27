@@ -64,7 +64,7 @@
                     if (isset($_SESSION['user_id'])){
                         ?>
                         <li style="float: right">
-                            <a href="controller/pageController.php?change=addWine">
+                            <a href="controller/pageController.php?change=myWines">
                                 <i class="fa">
                                     <?=$_SESSION['user_firstName']?>
                                 </i>

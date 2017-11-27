@@ -5,6 +5,8 @@
 
 	if(!isset($_SESSION)) session_start();
 
+	if(!isset($_SESSION['action'])) $_SESSION['action'] = "index";
+
 	define('VIEWS', 'views/');
 	define('MODELS', 'models/');
 	define('CONTROL', 'controller/');
@@ -32,6 +34,10 @@
 				else if ($_POST['hidden'] == "update") $_SESSION['controller'] = 'updateWine';
 				
 				require_once(CONTROL . "wineController.php");
+				break;
+			case 'rating':
+				$_SESSION['controller'] = 'insert';
+				require_once(CONTROL . "avaliacaoController.php");
 				break;
 			default:
 				require_once(VIEWS . "index/index.php");
