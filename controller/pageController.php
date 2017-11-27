@@ -11,5 +11,9 @@ if (isset($_GET['wineId']) && $_GET['wineId'] != ""){
 	$_SESSION['wineId'] = $_GET['wineId'];
 }
 
+if (isset($_GET['profileId']) && $_GET['profileId'] != "") {
+	$_SESSION['profileId'] = $_GET['profileId'];
+}
+
 header("Location: ../../" . ROOT);
 ?>

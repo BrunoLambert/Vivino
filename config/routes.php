@@ -62,6 +62,9 @@
 			case 'updateUser':
 				require_once(VIEWS . "/admin/user.php");
 				break;
+			case 'profile':
+				require_once(VIEWS . "/public/userPage.php");
+				break;
 			case 'addWine':
 				require_once(VIEWS . "/admin/addwine.php");
 				break;

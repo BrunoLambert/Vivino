@@ -1,16 +1,15 @@
-<?php include ("header.php"); ?>
+<?php 
+if(!isset($_SESSION)) session_start();
+if (isset($_SESSION['user_id'])) include('header.php');
+else include (VIEWS . "index/header.php");
+?>
 <div class="panel-body">
 	<div style="text-align: center;">
 		<?php
-		if(!isset($_SESSION['user_id'])){
-			?>
-			<a href="controller/pageController.php?change=index"><button class="btn btn-info btn-block">Voltar</button></a><br><br>
-			<?php
-		}
 		include("config/database.php");
 		if (!isset($_SESSION)) session_start();
 
-		$sql = "select * from users u inner join wines w on w.id_user = u.id where w.id = '" . $_SESSION['wineId'] . "'";
+		$sql = "select u.id, u.firstName, u.lastName, w.name, w.producer, w.price, w.country, w.type, w.harmonization, w.grape, w.style, w.photo from users u inner join wines w on w.id_user = u.id where w.id = '" . $_SESSION['wineId'] . "'";
 
 		$result = mysqli_query($db, $sql);
 
@@ -23,7 +22,7 @@
 				<td><img src=<?=$row['photo']?>></td>
 				<td>
 					<h1><?=$row['name']?></h1>
-					<h4><b>Cadastrado por: <?=$row['firstName'] ." ". $row['lastName']?></h4></b>
+					<h4><b>Cadastrado por: <a href="controller/pageController.php?change=profile&profileId=<?=$row['id']?>"><?=$row['firstName'] ." ". $row['lastName']?></h4></b></a>
 					<p>Produtor <?=$row['producer']?></p>
 					<p>Preço: <?=$row['price']?> reais</p>
 					<p>País: <?=$row['country']?></p>
@@ -60,7 +59,7 @@
 				$comment++;
 				?>
 				<p>->#<?=$comment?>#<-</p>
-				<table class="table">
+				<table class="table" style="color: white;">
 					<tr>
 						<th></th>
 						<th>Usuário</th>
@@ -68,13 +67,15 @@
 						<th>Comentário</th>
 					</tr>
 					<tr>
-						<td><img width="100px" src=<?=$row['photo']?>></td>
+						<td style="text-align: center;"><img width="100px" src=<?=$row['photo']?>></td>
 						<td><?=$row['firstName'] . " " . $row['lastName']?></td>
 						<td>Avaliação: <?=$row['stars']?> estrelas</td>
 						<td><?=$row['comment']?></td>
 					</tr>
 				</table>
 				<?php
+				if (!isset($_SESSION['user_id'])) echo "<hr width='95%;''>";
+				else echo "<br>";
 			}
 			if ($comment == 0) echo "<h3 style='color:white;text-align:center;'>Nenhum comentário cadastrado</h3><br>";
 			}
@@ -109,11 +110,7 @@
 				</form>
 				<br>
 			</div>
-			<?php }else{
-				?>
-				<a href="controller/pageController.php?change=index"><button class="btn btn-info btn-block">Voltar</button></a>
-				<?php
-			} ?>
+			<?php } ?>
 		</div>
 
 		<?php include("footer.php"); ?>

@@ -5,7 +5,7 @@ if(!isset($_SESSION)) session_start();
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Vivino Clone</title>
+    <title>X Vivino</title>
     <link href="themes/theme-public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" type="text/css" href="views/index/style.css">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -42,7 +42,8 @@ if(!isset($_SESSION)) session_start();
          <div class="header">
 
             <div class="logo wow fadeInLeft animated" data-wow-delay=".5s">
-                <h1><a href="../Vivino">Vivino</a></h1>
+                <br><h1><a href="../Vivino">Vivino</a></h1>
+                <p>Satisfação em Vinhos!</p>
             </div>
             <nav class="navbar navbar-fixed-top">
                 <div class="navbar-header">
@@ -56,13 +57,15 @@ if(!isset($_SESSION)) session_start();
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav animated wow fadeInUp animated animated" data-wow-duration="1200ms" data-wow-delay="500ms">
+                        <li style="float: right">
+                            <a href="controller/pageController.php?change=index">
+                                <i class="fa">Início</i>
+                            </a>
+                            <?php
+                            if(!isset($_SESSION)) session_start();
 
-                        <?php
-                        if(!isset($_SESSION)) session_start();
-
-                        if (isset($_SESSION['user_id'])){
-                            ?>
-                            <li style="float: right">
+                            if (isset($_SESSION['user_id'])){
+                                ?>
                                 <a href="controller/pageController.php?change=myWines">
                                     <i class="fa">
                                         <?=$_SESSION['user_firstName']?>
@@ -75,7 +78,6 @@ if(!isset($_SESSION)) session_start();
                             <?php
                         }else{
                             ?>
-                            <li style="float: right">
                                 <a href="controller/pageController.php?change=login">
                                     <i class="fa">
                                         Login
