@@ -13,7 +13,7 @@ function filterProducts() {
     $.ajax({
         type: 'POST',
         url: 'views/index/getProducts.php',
-        data:'price_range='+price_range+'op='+op,
+        data:'price_range='+price_range,
         beforeSend: function () {
             $('.container').css("opacity", ".5");
         },

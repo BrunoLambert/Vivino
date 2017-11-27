@@ -3,7 +3,7 @@
 if(isset($_POST['price_range'])){
 
     include('../../config/database.php');
-    
+
     //Setando condições para o price range
     $whereSQL = $orderSQL = '';
     $priceRange = $_POST['price_range'];
@@ -19,7 +19,7 @@ $query = $db->query("SELECT * FROM wines $whereSQL $orderSQL");
 
 if($query->num_rows > 0){
     while($row = $query->fetch_assoc()){
-        ?>  
+        ?>
         <div class="list-item">
             <div id="pattern" class="pattern">
               <ul class="list img-list">
@@ -37,7 +37,7 @@ if($query->num_rows > 0){
 
 
                 </li>
-                
+
             </ul>
         </div>
     </div>

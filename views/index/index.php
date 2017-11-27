@@ -16,7 +16,6 @@ include('config/database.php');
      </ul>
    </div>
  </section>
-
 </div>
 
 <center>
