@@ -25,9 +25,8 @@ if($query->num_rows > 0){
                 <li>
                     <a href="#" class="inner">
                         <div class="li-img">
-                          <img width="100px" src=<?=$row['photo']?>>
                           <a href="controller/pageController.php?change=wine&wineId=<?=$row['id']?>">
-                          </a>
+                          <img width="100px" src=<?=$row['photo']?>></a>
                       </div>
                   </a>
                   <div class="li-text">

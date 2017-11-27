@@ -1,4 +1,7 @@
+<?php
+if(!isset($_SESSION)) session_start();
 
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -36,70 +39,70 @@
     <!--banner start here-->
     <div class="banner">
       <div class="container">
-       <div class="header">
+         <div class="header">
 
-        <div class="logo wow fadeInLeft animated" data-wow-delay=".5s">
-            <h1><a href="../Vivino">Vivino</a></h1>
+            <div class="logo wow fadeInLeft animated" data-wow-delay=".5s">
+                <h1><a href="../Vivino">Vivino</a></h1>
+            </div>
+            <nav class="navbar navbar-fixed-top">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!--/.navbar-header-->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav animated wow fadeInUp animated animated" data-wow-duration="1200ms" data-wow-delay="500ms">
+
+                        <?php
+                        if(!isset($_SESSION)) session_start();
+
+                        if (isset($_SESSION['user_id'])){
+                            ?>
+                            <li style="float: right">
+                                <a href="controller/pageController.php?change=myWines">
+                                    <i class="fa">
+                                        <?=$_SESSION['user_firstName']?>
+                                    </i>
+                                </a>
+                                <a href="controller/pageController.php?change=logout">
+                                    <i class="fa">Logout</i>
+                                </a>
+                            </li>
+                            <?php
+                        }else{
+                            ?>
+                            <li style="float: right">
+                                <a href="controller/pageController.php?change=login">
+                                    <i class="fa">
+                                        Login
+                                    </i>
+                                </a>
+                                <a href="controller/pageController.php?change=register">
+                                    <i class="fa">Cadastro</i>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                        ?>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse-->
+
+                <div class="login-nav" style="float: right;" data-wow-delay=".5s">
+
+                </div>
+            </nav>
+
+            <!-- search-scripts -->
+            <script src="public/js/classie.js"></script>
+            <script src="public/js/uisearch.js"></script>
+
+
+
         </div>
-        <nav class="navbar navbar-fixed-top">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!--/.navbar-header-->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav animated wow fadeInUp animated animated" data-wow-duration="1200ms" data-wow-delay="500ms">
-                    
-                    <?php
-                    if(!isset($_SESSION)) session_start();
-
-                    if (isset($_SESSION['user_id'])){
-                        ?>
-                        <li style="float: right">
-                            <a href="controller/pageController.php?change=myWines">
-                                <i class="fa">
-                                    <?=$_SESSION['user_firstName']?>
-                                </i>
-                            </a>
-                            <a href="controller/pageController.php?change=logout">
-                                <i class="fa">Logout</i>
-                            </a>
-                        </li>
-                        <?php
-                    }else{
-                        ?>
-                        <li style="float: right">
-                            <a href="controller/pageController.php?change=login">
-                                <i class="fa">
-                                    Login
-                                </i>
-                            </a>
-                            <a href="controller/pageController.php?change=register">
-                                <i class="fa">Cadastro</i>
-                            </a>
-                        </li>
-                        <?php
-                    }
-                    ?>
-                </ul>
-            </div>
-            <!--/.navbar-collapse-->
-
-            <div class="login-nav" style="float: right;" data-wow-delay=".5s">
-
-            </div>
-        </nav>
-
-        <!-- search-scripts -->
-        <script src="public/js/classie.js"></script>
-        <script src="public/js/uisearch.js"></script>
-
-
-
     </div>
-</div>
 </div> 
