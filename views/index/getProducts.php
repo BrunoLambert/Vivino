@@ -6,7 +6,7 @@ if(isset($_POST['price_range'])){
     //Setando condições para o price range
     $whereSQL = $orderSQL = '';
     $priceRange = $_POST['price_range'];
-    if(!empty($priceRange)){
+    $op = $_POST['op'];
         $priceRangeArr = explode(',', $priceRange);
         $whereSQL = "WHERE price BETWEEN '".$priceRangeArr[0]."' AND '".$priceRangeArr[1]."'";
         $orderSQL = " ORDER BY price ASC ";
@@ -18,15 +18,34 @@ if(isset($_POST['price_range'])){
     
     if($query->num_rows > 0){
         while($row = $query->fetch_assoc()){
-    ?>
-                <div class="list-item">
+    ?>  
+        <div class="list-item">
+            <div id="pattern" class="pattern">
+              <ul class="list img-list">
+                <li>
+                    <a href="#" class="inner">
+                        <div class="li-img">
+                          <img width="100px" src=<?=$row['photo']?>>
+                            <a href="controller/pageController.php?change=wine&wineId=<?=$row['id']?>">
+                            </a>
+                        </div>
+                    </a>
+                    <div class="li-text">
+                    <h2><?php echo $row["name"]; ?></h2>
+                    <h4>Preço: R$<?php echo $row["price"]; ?></h4>
+                    <h4>País: <?php echo $row["country"]; ?></h4>
 
-                    <h2 style="float:right;"><?php echo $row["name"]; ?></h2>
-                    <h4 style="float:right;"">Price: <?php echo $row["price"]; ?></h4>
-
-                </div>
+                  
+                </li>
+                
+              </ul>
+            </div>
+        </div>
     <?php }
-    }else{
+
+    }
+
+    else{
         echo 'Product(s) not found';
     }
 }
