@@ -59,7 +59,7 @@ if(!isset($_SESSION)) session_start();
                 <!--/.navbar-header-->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav animated wow fadeInUp animated animated" data-wow-duration="1200ms" data-wow-delay="500ms">
-                        <li style="float: right">
+                        <li style="float: right; background-color: #ccc276;">
                             <a href="controller/pageController.php?change=index">
                                 <i class="fa">Início</i>
                             </a>

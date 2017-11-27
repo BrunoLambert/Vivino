@@ -12,7 +12,6 @@ else include (VIEWS . "index/header.php");
 	<div style="text-align: center;">
 		<?php
 		include("config/database.php");
-		if (!isset($_SESSION)) session_start();
 
 		$sql = "select u.id, u.firstName, u.lastName, w.name, w.producer, w.price, w.country, w.type, w.harmonization, w.grape, w.style, w.photo from users u inner join wines w on w.id_user = u.id where w.id = '" . $_SESSION['wineId'] . "'";
 
@@ -24,7 +23,7 @@ else include (VIEWS . "index/header.php");
 			$row = $result->fetch_array();
 			?>
 			<tr>
-				<td><img src=<?=$row['photo']?>></td>
+				<td><img width="200px" src=<?=$row['photo']?>></td>
 				<td>
 					<h1><?=$row['name']?></h1>
 					<h4><b>Cadastrado por: <a href="controller/pageController.php?change=profile&profileId=<?=$row['id']?>"><?=$row['firstName'] ." ". $row['lastName']?></h4></b></a>
@@ -50,7 +49,7 @@ else include (VIEWS . "index/header.php");
 
 	<hr>
 
-	<div style="background-color: Maroon; color: white; box-shadow: 0px 0px 30px black;">
+	<div style="background-color: #7a4b52; color: white; box-shadow: 0px 0px 30px black;">
 		<?php
 		$sql = "select * from avaliacoes a inner join wines w on a.idWine = w.id inner join users u on a.idUser = u.id where idWine = '" . $_SESSION['wineId'] . "'";
 		$result = mysqli_query($db, $sql);
@@ -90,7 +89,7 @@ else include (VIEWS . "index/header.php");
 		<?php
 		if(isset($_SESSION['user_id'])){
 			?>
-			<div style="background-color: Maroon;box-shadow: 0px 0px 30px black;">
+			<div style="background-color: #7a4b52;box-shadow: 0px 0px 30px black;">
 				<br><h3 style="text-align: center;color: white;">Faça Seu Comentário!</h3><br>
 				<form style="text-align: center;" method="POST" action="index.php?action=rating">
 					<?php

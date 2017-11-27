@@ -67,7 +67,7 @@ if(basename($_SERVER["PHP_SELF"])=='header.php'){
                         <a href="controller/pageController.php?change=index"><span class="fa fa fa-desktop"></span> <span class="xn-text">Inicio</span></a>
                     </li> 
                     <li>
-                        <a href="controller/pageController.php?change=myWines"><span class="fa fa-glass"></span> <span class="xn-text">My Wines</span></a>
+                        <a href="controller/pageController.php?change=myWines"><span class="fa fa-glass"></span> <span class="xn-text">Meus Vinhos</span></a>
                     </li>
                     <li>
                         <a href="controller/pageController.php?change=addWine"><span class="fa fa-plus"></span> <span class="xn-text">Cadastrar Vinho</span></a>

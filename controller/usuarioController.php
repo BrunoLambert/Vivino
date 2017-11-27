@@ -84,6 +84,7 @@ if ($_SESSION['controller'] == 'register') {
 	unset($_SESSION['user_lastName']);
 	unset($_SESSION['user_email']);
 	unset($_SESSION['user_login']);
+	unset($_SESSION['user_photo']);
 
 	unset($_SESSION['controller']);
 	
@@ -128,8 +129,11 @@ if ($_SESSION['controller'] == 'register') {
 					mysqli_close($db);
 					header("Location: controller/pageController.php?change=updateUser");
 
-				}else unset($_SESSION['error']);
-
+				}else{
+					
+					$_SESSION['user_photo'] = "photos/" . $arqName;
+					unset($_SESSION['error']);
+				}
 			}else{
 
 				$_SESSION['error'] = "Falha no envio da imagem";
